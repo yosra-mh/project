@@ -1,0 +1,193 @@
+.MuiButton-containedPrimary {
+  color: #fff;
+  background-color: #0894f6;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+}
+
+#actionBtn {
+  border-radius: 50%;
+  border: none;
+}
+
+#actionBtn:hover {
+  background-color: #e3f0fa;
+}
+
+a {
+  text-decoration: none;
+}
+
+#addBtn {
+  padding-top: 2px;
+}
+
+#TableCell {
+  color: #606770;
+  font-size: 12px;
+}
+
+#title {
+  color: #1f2027;
+}
+
+.Mui {
+  background: #f2f2f2;
+}
+
+#search,
+#filter {
+  position: absolute;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+#filter {
+  padding: 4px;
+  margin-left: auto;
+  right: 0;
+}
+
+#clear {
+  position: fixed;
+}
+
+.MTableToolbar-actions-9 {
+  display: flex;
+  width: -webkit-fill-available;
+}
+
+#search,
+#filter {
+  position: absolute;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+#filter {
+  padding: 4px;
+  margin-left: auto;
+  right: 0;
+}
+
+#clear {
+  position: initial;
+}
+
+.MTableToolbar-actions-9 {
+  display: flex;
+  right: 0;
+  justify-content: right;
+  width: fit-content;
+  margin-left: 15px;
+}
+
+#actions {
+  background-color: #f2f2f2;
+  padding: 5px 10px;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  padding: 4px 6px;
+  color: #989696;
+}
+
+#check {
+  background-color: #2ef53b;
+  padding: 5px 10px;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  padding: 4px 6px;
+  color: #fcfcfc;
+}
+#addIcon {
+  background-color: #0894f6;
+  padding: 5px 10px;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  padding: 4px 6px;
+  color: #ffffff;
+}
+
+#addExport {
+  background-color: #f7d31d;
+  padding: 5px 10px;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  padding: 4px 6px;
+  color: #ffffff;
+}
+
+#ViewColumn {
+  background-color: #f3495c;
+  padding: 5px 10px;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  padding: 4px 6px;
+  color: #ffffff;
+}
+
+.MuiFormControl-root {
+  border: 0;
+  margin: 0;
+  display: inline-flex;
+  padding: 0;
+  position: relative;
+  height: 40px;
+  min-width: 0;
+  flex-direction: column;
+  vertical-align: top;
+}
+
+.MuiButton-contained.Mui-disabled {
+  border-radius: 50%;
+}
+
+.s-layout__content [type="text"] {
+  background: none;
+}
+
+@media (max-width: 412px) {
+  .MTableToolbar-root-42 {
+    padding-right: 8px;
+    display: block;
+    padding: 15px;
+  }
+
+  .s-layout__content .MTableToolbar-searchField-65 {
+    max-width: min-content;
+    padding-left: 16px;
+    position: absolute;
+  }
+  .s-layout__content.MuiToolbar-root {
+    display: block;
+    position: relative;
+    align-items: normal;
+  }
+}
+
+#table {
+  display: block;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+@media (max-width: 992px) {
+  #table {
+    overflow-y: visible;
+  }
+}
+
+.MuiButtonBase-root.Mui-disabled {
+  cursor: default;
+  pointer-events: none;
+  position: static;
+  padding-right: 15px;
+}
+
+.MuiInputAdornment-positionEnd {
+  height: fit-content;
+}

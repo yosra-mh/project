@@ -1,0 +1,30 @@
+@media (min-width: 42em) {
+  .s-layout__content {
+    margin-left: 4em;
+  }
+}
+
+@media (min-width: 68em) {
+  .s-layout__content {
+    margin-left: 15em;
+  }
+}
+.s-layout__content {
+  display: flex;
+  flex: 1;
+  background: #f2f2f2;
+  min-height: 100%;
+  border-left: 1px solid rgb(193, 193, 193);
+}
+
+#s-layout__content {
+  display: flex;
+  flex: 1;
+  background: #f2f2f2;
+}
+
+#section {
+  position: relative;
+  top: 0px;
+  padding: 108px 15px;
+}

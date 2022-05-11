@@ -1,0 +1,267 @@
+*** home page ************/
+
+
+/**** Home Nav **/
+.social-icon {
+  color: #0894f6;
+  align-items: center;
+  justify-content: center;
+}
+.social-icon-box {
+  width: 50px;
+  height: 30px;
+  text-align: center;
+}
+
+.facebook,
+.google,
+.twitter {
+  display: flex;
+  top: 5px;
+  color: #0894f6;
+  align-items: center;
+  justify-content: center;
+}
+
+.facebook,
+.google {
+  border-left: 0.5px solid #0894f6;
+}
+
+#logo {
+  margin-right: 2rem;
+}
+.links {
+  margin: 0px 15px;
+  font-size: 16px;
+  color: #515151;
+}
+
+/**** Home Content **/
+
+.karate-img {
+  width: 18%;
+  top: 0vh;
+  right: 60vh;
+  position: absolute;
+}
+
+.player-img {
+  width: 20%;
+  top: 36vh;
+  right: 85vh;
+  position: absolute;
+}
+
+.traveler-img {
+  width: 32%;
+  bottom: -9vh;
+  right: 0vh;
+  position: absolute;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 42px;
+  margin-bottom: 15px;
+  margin-top: 20vh;
+}
+
+.title span {
+  color: #0894f6;
+  font-size: 37px;
+  letter-spacing: 0.5px;
+  animation-name: bounce;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+}
+
+.paragraph {
+  width: 408px;
+  font-size: 15px;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .karate-img {
+    width: 20%;
+    top: 12vh;
+    right: 20vh;
+    margin-top: 54px;
+    position: absolute;
+  }
+  .player-img {
+    width: 22%;
+    top: 49vh;
+    right: 43vh;
+    position: absolute;
+  }
+
+  .traveler-img {
+    width: 28%;
+    bottom: -9vh;
+    right: -10vh;
+  }
+
+  .title {
+    font-size: 25px;
+    margin-bottom: 15px;
+    margin-top: 20vh;
+  }
+
+  .title span {
+    font-size: 30px;
+  }
+
+  .paragraph {
+    width: 350px;
+    font-size: 13px;
+  }
+}
+
+.navbar-light .navbar-nav .nav-link,
+.navbar-nav {
+  z-index: 15;
+  background: white;
+  margin: 0;
+}
+button:focus:not(:focus-visible) {
+  color: white;
+}
+
+.navbar-toggler:focus {
+  color: white;
+}
+
+#social-m {
+  display: flex;
+  place-content: center;
+  margin-top: 15px;
+}
+
+@media only screen and (max-device-width: 768px) {
+  .karate-img {
+    top: 7vh;
+    width: 20%;
+    margin-top: 5vh;
+    right: 0;
+    margin: auto;
+    left: 0;
+    transform: rotate(3deg);
+    z-index: -1;
+  }
+
+  #social,
+  .social-icon {
+    display: none;
+  }
+
+  .player-img {
+    width: 17%;
+    margin-top: 157px;
+    left: 41px;
+    transform: rotate(-4deg);
+  }
+
+  .traveler-img {
+    width: 28%;
+    bottom: 0vh;
+    right: 13vh;
+    transform: rotate(10deg);
+  }
+
+  .title {
+    font-size: 21px;
+    margin-bottom: 15px;
+    margin-top: 10vh;
+    white-space: nowrap;
+    width: 100%;
+    line-height: initial;
+  }
+
+  .title span {
+    font-size: 24px;
+  }
+
+  .paragraph {
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+  }
+  .text-bloc {
+    margin: 30px;
+    text-align: -webkit-center;
+    text-align-last: center;
+  }
+  .navbar-light .navbar-nav .nav-link {
+    color: #0894f6;
+    padding: 18px 0;
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  .karate-img {
+    display: none;
+  }
+
+  #social,
+  .social-icon {
+    display: none;
+  }
+
+  .player-img {
+    width: 44%;
+    margin-top: -96px;
+    right: 18vh;
+    opacity: 6%;
+    transform: rotate(8deg);
+  }
+
+  .traveler-img {
+    width: 30%;
+    margin-bottom: 30px;
+    right: 5vh;
+    opacity: 28%;
+  }
+
+  .title {
+    font-size: 21px;
+    margin-bottom: 15px;
+    margin-top: 10vh;
+    white-space: nowrap;
+    width: 100%;
+    line-height: initial;
+  }
+
+  .title span {
+    font-size: 24px;
+  }
+
+  .paragraph {
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+  }
+  .text-bloc {
+    margin: 40px 30px;
+    text-align: -webkit-center;
+    text-align-last: center;
+  }
+  .navbar-light .navbar-nav .nav-link {
+    color: #0894f6;
+    padding: 18px 0;
+  }
+}
+
+#social-h {
+  color: #0894f6;
+}
+
+@media only screen and (max-device-width: 991px) {
+  #social-h {
+    display: none;
+  }
+  #navhead {
+    background-color: white;
+  }
+}
