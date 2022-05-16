@@ -17,7 +17,7 @@ function AdminDashboard() {
   return (
     <SimpleBar style={{ maxHeight: "100vh" }}>
       <ChakraProvider theme={theme}>
-        <Router>
+        <Router exact>
           <div className="s-layout">
             <Sidebar />
             <Switch>

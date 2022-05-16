@@ -11,9 +11,10 @@ function Profile() {
       <ChakraProvider theme={theme}>
         <Router>
           <Switch>
-            <Route path="/" exact>
+            <Route path="/signin">
               <Main />
             </Route>
+            <Route exact path="/"></Route>
           </Switch>
         </Router>
       </ChakraProvider>

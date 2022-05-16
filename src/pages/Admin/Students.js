@@ -20,6 +20,7 @@ import ViewColumn from "@material-ui/icons/ViewColumn";
 import { forwardRef } from "react";
 import { CsvBuilder } from "filefy";
 import SaveAltIcon from "@material-ui/icons/SaveAlt";
+import { alpha } from "@material-ui/core/styles";
 const tableIcons = {
   Add: React.forwardRef((props, ref) => (
     <Add id="addIcon" {...props} ref={ref} />
@@ -316,7 +317,7 @@ function Students() {
       filterPlaceholder: "Filter",
     },
   ];
-  const tableRef2 = React.createRef();
+  const tableRef = React.createRef();
 
   const handleBulkDelete = () => {
     const updatedData = studentsData.filter(
@@ -337,7 +338,7 @@ function Students() {
       <MaterialTable
         columns={columns}
         data={studentsData}
-        tableRef={tableRef2}
+        tableRef={tableRef}
         icons={tableIcons}
         editable={{
           onRowAdd: (newRow, oldRow) =>
@@ -345,18 +346,20 @@ function Students() {
               setstudentsData([...studentsData, newRow]);
               setTimeout(() => resolve(), 500);
             }),
+
           onRowUpdate: (newRow, oldRow) =>
             new Promise((resolve, reject) => {
-              const updatedData = [...studentsData];
-              updatedData[oldRow.studentsData.id] = newRow;
-              setstudentsData(updatedData);
+              const updatedData2 = [...studentsData];
+              updatedData2[oldRow.id - 1] = newRow;
+              setstudentsData(updatedData2);
               setTimeout(() => resolve(), 500);
             }),
           onRowDelete: (selectedRow) =>
             new Promise((resolve, reject) => {
-              const updatedData = [...studentsData];
-              updatedData.splice(selectedRow.studentsData.id, 1);
-              setstudentsData(updatedData);
+              const updatedData3 = [...studentsData];
+              console.log(selectedRow.id);
+              updatedData3.splice(selectedRow.id - 1, 1);
+              setstudentsData(updatedData3);
               setTimeout(() => resolve(), 1000);
             }),
         }}

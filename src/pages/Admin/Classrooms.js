@@ -20,6 +20,10 @@ import ViewColumn from "@material-ui/icons/ViewColumn";
 import { forwardRef } from "react";
 import { CsvBuilder } from "filefy";
 import SaveAltIcon from "@material-ui/icons/SaveAlt";
+import { Button, Container, IconButton } from "@material-ui/core";
+import { DropzoneDialogBase } from "material-ui-dropzone";
+import CloseIcon from "@material-ui/icons/Close";
+
 const tableIcons = {
   Add: React.forwardRef((props, ref) => (
     <Add id="addIcon" {...props} ref={ref} />
@@ -72,90 +76,83 @@ export default function Classrooms() {
   const [classroomsData, setclassroomsData] = useState([
     {
       id: 1,
-      students: "22",
-      teachers: "5",
       class: "1B5",
       state: "A",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_5nywS57VWeUU5RdCwqsTKk2Y0N_-5jcUjHDeDrNoYuqTGnGjy3KF0KrlLBQf0sGyUOw&usqp=CAU",
     },
     {
       id: 2,
-      students: "32",
-      teachers: "6",
       class: "1B8",
       state: "I",
     },
     {
       id: 3,
-      students: "24",
-      teachers: "8",
       class: "1C5",
       state: "A",
     },
     {
       id: 4,
-      students: "82",
-      teachers: "5",
       class: "1B3",
       state: "I",
     },
     {
       id: 5,
-      students: "12",
-      teachers: "5",
       class: "1B4",
       state: "A",
     },
     {
       id: 6,
-      students: "22",
-      teachers: "5",
       class: "1B8",
       state: "A",
     },
     {
       id: 7,
-      students: "22",
-      teachers: "5",
       class: "1B2",
       state: "I",
     },
     {
       id: 8,
-      students: "22",
-      teachers: "5",
       class: "1B1",
       state: "I",
     },
     {
       id: 9,
-      students: "22",
-      teachers: "5",
       class: "1B7",
       state: "A",
     },
     {
       id: 10,
-      students: "22",
-      teachers: "5",
       class: "1C1",
       state: "I",
     },
     {
       id: 11,
-      students: "24",
-      teachers: "5",
       class: "1C2",
       state: "I",
     },
     {
       id: 12,
-      students: "23",
-      teachers: "5",
       class: "1C6",
       state: "A",
     },
   ]);
+  const [open, setOpen] = useState(false);
+  const FILES_LIMIT = 1;
+  const pageSize = [10, 20, 50, 100];
   const [selectedRows, setSelectedRows] = useState([]);
+  const [image, setImage] = useState([]);
+
+  const dialogTitle = () => (
+    <>
+      <span>Upload file</span>
+      <IconButton
+        style={{ right: "12px", top: "8px", position: "absolute" }}
+        onClick={() => setOpen(false)}
+      >
+        <CloseIcon />
+      </IconButton>
+    </>
+  );
 
   const columns = [
     {
@@ -163,12 +160,20 @@ export default function Classrooms() {
       field: "class",
       filtering: true,
     },
+
     {
-      title: "Students",
-      field: "students",
-      filtering: false,
+      field: "img",
+      title: "Schedule",
+      editComponent: () => (
+        <Button variant="contained" onClick={() => setOpen(true)}>
+          {"Add image"}
+        </Button>
+      ),
+
+      render: (rowData) => (
+        <img alt="" border="3" height="100" width="100" src={rowData.img} />
+      ),
     },
-    { title: "Teachers", field: "teachers", filtering: false },
     {
       title: "State",
       field: "state",
@@ -230,16 +235,17 @@ export default function Classrooms() {
             }),
           onRowUpdate: (newRow, oldRow) =>
             new Promise((resolve, reject) => {
-              const updatedData = [...classroomsData];
-              updatedData[oldRow.classroomsData.id] = newRow;
-              setclassroomsData(updatedData);
+              const updatedData4 = [...classroomsData];
+              console.log(oldRow);
+              updatedData4[oldRow.id - 1] = newRow;
+              setclassroomsData(updatedData4);
               setTimeout(() => resolve(), 500);
             }),
           onRowDelete: (selectedRow) =>
             new Promise((resolve, reject) => {
-              const updatedData = [...classroomsData];
-              updatedData.splice(selectedRow.classroomsData.id, 1);
-              setclassroomsData(updatedData);
+              const updatedData5 = [...classroomsData];
+              updatedData5.splice(selectedRow.id - 1, 1);
+              setclassroomsData(updatedData5);
               setTimeout(() => resolve(), 1000);
             }),
         }}
@@ -311,6 +317,28 @@ export default function Classrooms() {
           buttonStyle: { background: "#f2f2f2", color: "#ffffff" },
         }}
         title="Classrooms List"
+      />
+      <DropzoneDialogBase
+        dialogTitle={dialogTitle()}
+        acceptedFiles={["image/*"]}
+        fileObjects={image}
+        cancelButtonText={"cancel"}
+        submitButtonText={"submit"}
+        maxFileSize={5000000}
+        filesLimit={FILES_LIMIT}
+        open={open}
+        onAdd={(newFileObjs) => {
+          setImage([].concat([], newFileObjs));
+        }}
+        onDelete={(deleteFileObj) => {
+          setImage(image.filter((item) => item !== deleteFileObj));
+        }}
+        onClose={() => setOpen(false)}
+        onSave={() => {
+          setOpen(false);
+        }}
+        showPreviews={true}
+        showFileNamesInPreview={true}
       />
     </div>
   );

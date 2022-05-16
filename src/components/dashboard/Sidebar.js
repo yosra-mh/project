@@ -11,7 +11,7 @@ import {
   faRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "../../styles/sidebar.css";
 
 export default function Sidebar() {
@@ -92,11 +92,8 @@ export default function Sidebar() {
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/signin" className="Droplink">
-                      <FontAwesomeIcon
-                        className="iconMenuD"
-                        icon={faRightFromBracket}
-                      />
+                    <NavLink to="/" className="Droplink">
+                      <FontAwesomeIcon className="iconMenuD" icon={faUser} />
                       Logout
                     </NavLink>
                   </li>
