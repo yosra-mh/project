@@ -18,6 +18,7 @@ import SaveAlt from "@material-ui/icons/SaveAlt";
 import Search from "@material-ui/icons/Search";
 import ViewColumn from "@material-ui/icons/ViewColumn";
 import { forwardRef } from "react";
+import AttachFile from "@material-ui/icons/AttachFile";
 import { CsvBuilder } from "filefy";
 import SaveAltIcon from "@material-ui/icons/SaveAlt";
 import { Button, Container, IconButton } from "@material-ui/core";
@@ -156,24 +157,26 @@ export default function Classrooms() {
 
   const columns = [
     {
-      title: "Class",
-      field: "class",
-      filtering: true,
-    },
-
-    {
       field: "img",
       title: "Schedule",
+      filtering: false,
+      render: (rowData) => (
+        <h5 id="Attachement">
+          <AttachFile /> {rowData.img}{" "}
+        </h5>
+      ),
       editComponent: () => (
         <Button variant="contained" onClick={() => setOpen(true)}>
           {"Add image"}
         </Button>
       ),
-
-      render: (rowData) => (
-        <img alt="" border="3" height="100" width="100" src={rowData.img} />
-      ),
     },
+    {
+      title: "Class",
+      field: "class",
+      filtering: true,
+    },
+
     {
       title: "State",
       field: "state",

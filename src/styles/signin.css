@@ -207,3 +207,7 @@ input.error {
 button:hover {
   cursor: pointer;
 }
+
+.imgSignin {
+  mix-blend-mode: darken;
+}

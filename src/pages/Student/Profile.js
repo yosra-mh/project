@@ -5,7 +5,7 @@ function Profile() {
   return (
     <Main
       accountName="Abidi souha"
-      accountRole="Admin"
+      accountRole="Student"
       accountImg="https://www.imgacademy.com/themes/custom/imgacademy/images/helpbox-contact.jpg"
     />
   );

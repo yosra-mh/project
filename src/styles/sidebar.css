@@ -286,15 +286,15 @@
 .profile-dropdown input[type="checkbox"] {
   display: none;
 }
-.profile-dropdown input[type="checkbox"]:checked ~ ul {
+.profile-dropdown :hover ~ ul {
   display: block;
   animation: pulse 0.5s;
 }
 
-.profile-dropdown input[type="checkbox"]:checked ~ label i {
+.profile-dropdown :hover ~ label i {
   color: #f2f2f2;
 }
-.profile-dropdown input[type="checkbox"]:checked ~ label:after {
+.profile-dropdown :hover ~ label:after {
   content: "";
   position: absolute;
   top: 100%;

@@ -4,10 +4,12 @@ import ImageBloc from "../components/HomeComponents/signIn/ImageBloc";
 import { Link } from "react-router-dom";
 import "../styles/signin.css";
 
-function SignIn() {
+function SignIn(props) {
+  const imgUrl = props.imgUrl;
+
   return (
     <Row>
-      <ImageBloc imgUrl="../assets/img/signin.png" />
+      <ImageBloc img={imgUrl} />
       <Col md={7} xs={12} sm={12} className="form-bloc 	d-block">
         <h1 className="logo"> LOGOLOG</h1>
         <h3 className="text">Sign up as ...</h3>
@@ -43,7 +45,7 @@ function SignIn() {
             <img
               className=" img-fluid  user bounce"
               id="ball"
-              src="../assets/img/admin.png"
+              src="../assets/img/admin1.png"
               alt=""
             />
             <h4 className="user-title">Administrator</h4>

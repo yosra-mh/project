@@ -21,7 +21,7 @@ import "../../../../styles/profile.css";
 
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-function Profile() {
+function Profile({ accountName, accountRole, accountImg }) {
   const [userProfile, setUserProfile] = useState(null);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -48,10 +48,10 @@ function Profile() {
     <VStack spacing={3} py={5} borderBottomWidth={1} borderColor="brand.light">
       <Avatar
         size="2xl"
-        name="Abidi Souha"
+        name={accountName}
         cursor="pointer"
         onClick={openChooseImage}
-        src={userProfile ? userProfile : "/assets/img/teacher.png"}
+        src={userProfile ? userProfile : { accountImg }}
       >
         <AvatarBadge id="editBadge" bg="brand.blue" boxSize="1em">
           <FontAwesomeIcon icon={faPen} id="editIcon" />
@@ -87,10 +87,10 @@ function Profile() {
       </Modal>
       <VStack spacing={1}>
         <Heading as="h3" fontSize="xl" color="brand.dark">
-          Abidi Souha
+          {accountName}
         </Heading>
         <Text color="brand.gray" fontSize="sm">
-          Admin
+          {accountRole}
         </Text>
       </VStack>
     </VStack>
