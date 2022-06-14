@@ -2,7 +2,7 @@ import React from "react";
 import Sidebar from "../../components/dashboard/sidebar/Sidebar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Discussions from "./Discussions";
-import MySchedule from "./MySchedule";
+import SonSchedule from "./SonSchedule";
 import List from "../../components/dashboard/classroom/List";
 import Home from "./Home";
 import Profile from "./Profile";
@@ -10,10 +10,10 @@ import "../../App.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import { theme } from "../../helpers";
 import SimpleBar from "simplebar-react";
-import { studentLinks } from "../../components/dashboard/sidebar/sideBarData";
+import { parentsLinks } from "../../components/dashboard/sidebar/sideBarData";
 import Grades from "./Grades";
 import SingleClassroom from "../../components/dashboard/classroom/SingleClassroom";
-function StudentDashboard() {
+function ParentsDashboard() {
   const [classrooms, setClassrooms] = React.useState([
     {
       id: 1,
@@ -69,40 +69,41 @@ function StudentDashboard() {
       <ChakraProvider theme={theme}>
         <Router>
           <div className="s-layout">
-            <Sidebar sideBarLinks={studentLinks} user="student" />
+            <Sidebar sideBarLinks={parentsLinks} user="parents" />
             <Switch>
-              <Route exact path="/student/home">
+              <Route exact path="/parents/home">
                 <Home />
               </Route>
-              <Route exact path="/student/discussions">
+              <Route exact path="/parents/discussions">
                 <Discussions />
               </Route>
-              <Route exact path="/student/classroom/">
+              <Route exact path="/parents/classroom">
                 <List
-                  user="student"
+                  user="parents"
                   classrooms={classrooms}
                   setClassrooms={setClassrooms}
                 />
               </Route>
 
               {classrooms.map((classroom) => (
-                <Route path={`/student/classroom/${classroom.name}`}>
+                <Route path={`/parents/classroom/${classroom.name}`}>
                   <div key={classroom.id}></div>
                   <SingleClassroom
-                    key={classroom.id}
+                    id={classroom.id}
                     subject={classroom.name}
-                    user="student"
+                    user="parents"
                   />
                 </Route>
               ))}
-              <Route exact path="/student/grades">
+
+              <Route exact path="/parents/grades">
                 <Grades />
               </Route>
-              <Route exact path="/student/mySchedule">
-                <MySchedule />
+              <Route exact path="/parents/sonSchedule">
+                <SonSchedule />
               </Route>
 
-              <Route exact path="/student/profile">
+              <Route exact path="/parents/profile">
                 <Profile />
               </Route>
             </Switch>
@@ -113,4 +114,4 @@ function StudentDashboard() {
   );
 }
 
-export default StudentDashboard;
+export default ParentsDashboard;

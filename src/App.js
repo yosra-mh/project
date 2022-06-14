@@ -5,6 +5,7 @@ import SigninUser from "./pages/SigninUser";
 import AdminDashboard from "./pages/Admin/AdminDashboard";
 import StudentDashboard from "./pages/Student/StudentDashboard";
 import Home from "./pages/Home";
+import ParentsDashboard from "./pages/Parents/ParentDashboard";
 import React from "react";
 
 function App() {
@@ -45,6 +46,10 @@ function App() {
 
         <Route exact path="/student/home">
           <StudentDashboard />
+        </Route>
+
+        <Route exact path="/parents/home">
+          <ParentsDashboard />
         </Route>
       </Switch>
     </Router>

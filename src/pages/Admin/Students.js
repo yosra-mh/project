@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "../../styles/teachers.css";
 import MaterialTable from "material-table";
-import GetAppIcon from "@material-ui/icons/GetApp";
 import Add from "@material-ui/icons/Add";
 import ArrowDownward from "@material-ui/icons/ArrowDownward";
 import Check from "@material-ui/icons/Check";
@@ -10,17 +9,14 @@ import ChevronRight from "@material-ui/icons/ChevronRight";
 import Clear from "@material-ui/icons/Clear";
 import DeleteOutline from "@material-ui/icons/DeleteOutline";
 import Edit from "@material-ui/icons/Edit";
-import FilterList from "@material-ui/icons/FilterList";
 import FirstPage from "@material-ui/icons/FirstPage";
 import LastPage from "@material-ui/icons/LastPage";
 import Remove from "@material-ui/icons/Remove";
 import SaveAlt from "@material-ui/icons/SaveAlt";
 import Search from "@material-ui/icons/Search";
 import ViewColumn from "@material-ui/icons/ViewColumn";
-import { forwardRef } from "react";
 import { CsvBuilder } from "filefy";
-import SaveAltIcon from "@material-ui/icons/SaveAlt";
-import { alpha } from "@material-ui/core/styles";
+
 const tableIcons = {
   Add: React.forwardRef((props, ref) => (
     <Add id="addIcon" {...props} ref={ref} />

@@ -1,19 +1,17 @@
 import React from "react";
-import Sidebar from "../../components/dashboard/Sidebar";
+import Sidebar from "../../components/dashboard/sidebar/Sidebar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Discussions from "./Discussions";
-import Parents from "./Parents";
 import Schedules from "./Schedules";
 import Classrooms from "./Classrooms";
 import Teachers from "./Teachers";
 import Students from "./Students";
-import Main from "../../components/dashboard/profile/Main";
 import Profile from "./Profile";
 import "../../App.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import { theme } from "../../helpers";
 import SimpleBar from "simplebar-react";
-import { adminLinks } from "../../components/dashboard/sideBarData";
+import { adminLinks } from "../../components/dashboard/sidebar/sideBarData";
 
 function AdminDashboard() {
   return (
@@ -28,9 +26,6 @@ function AdminDashboard() {
               </Route>
               <Route exact path="/admin/teachers">
                 <Teachers />
-              </Route>
-              <Route exact path="/admin/parents">
-                <Parents />
               </Route>
               <Route exact path="/admin/schedules">
                 <Schedules />

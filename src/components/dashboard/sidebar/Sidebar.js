@@ -6,7 +6,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink, Link } from "react-router-dom";
-import "../../styles/sidebar.css";
+import "../../../styles/sidebar.css";
 
 export default function Sidebar({ sideBarLinks, user }) {
   const isActive = {
@@ -21,22 +21,20 @@ export default function Sidebar({ sideBarLinks, user }) {
           <FontAwesomeIcon icon={faBars} />
         </a>
         <ul className="sidebarList">
-          <li>
-            {sideBarLinks.map((Link) => {
-              const { id, icon, name, link } = Link;
-              return (
-                <li className="sidebarListItem" key={id}>
-                  <NavLink
-                    to={`/${user}/${link}`}
-                    className="s-sidebar__nav-link"
-                  >
-                    <div className="iconBadge">{icon}</div>
-                    <em> {name}</em>
-                  </NavLink>
-                </li>
-              );
-            })}
-          </li>
+          {sideBarLinks.map((Link) => {
+            const { id, icon, name, link } = Link;
+            return (
+              <li className="sidebarListItem" key={id}>
+                <NavLink
+                  to={`/${user}/${link}`}
+                  className="s-sidebar__nav-link"
+                >
+                  <div className="iconBadge">{icon}</div>
+                  <em> {name}</em>
+                </NavLink>
+              </li>
+            );
+          })}
 
           <div className="half">
             <label htmlFor="profile2" className="profile-dropdown">
@@ -46,13 +44,13 @@ export default function Sidebar({ sideBarLinks, user }) {
                 alt=""
                 className="topAvatar"
               />{" "}
-              <span>Admin</span>
+              <span> {user}</span>
               <label htmlFor="profile2">
                 <FontAwesomeIcon icon={faChevronDown} />
               </label>
               <ul className="list">
                 <li>
-                  <NavLink to="/admin/profile" className="Droplink">
+                  <NavLink to={`/${user}/profile`} className="Droplink">
                     <FontAwesomeIcon className="iconMenuD" icon={faUser} />
                     Profile
                   </NavLink>

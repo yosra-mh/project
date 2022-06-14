@@ -2,7 +2,7 @@ import React from "react";
 import "../../styles/mySchedule.css";
 import Schedule from "../../components/dashboard/schedule/Schedule.js";
 
-function MySchedule() {
+function SonSchedule() {
   return (
     <div className="s-layout__content " id="mySchedule">
       <Schedule />
@@ -10,4 +10,4 @@ function MySchedule() {
   );
 }
 
-export default MySchedule;
+export default SonSchedule;

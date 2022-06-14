@@ -51,7 +51,7 @@ function Profile({ accountName, accountRole, accountImg }) {
         name={accountName}
         cursor="pointer"
         onClick={openChooseImage}
-        src={userProfile ? userProfile : { accountImg }}
+        src={userProfile ? userProfile : accountImg}
       >
         <AvatarBadge id="editBadge" bg="brand.blue" boxSize="1em">
           <FontAwesomeIcon icon={faPen} id="editIcon" />

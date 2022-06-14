@@ -1,0 +1,345 @@
+.create-icon {
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.create_tag {
+  margin-right: 8px;
+}
+.tag {
+  background: #f3495c;
+  color: white;
+  margin-right: 7px;
+}
+
+.navBar {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.navbar__last {
+  display: flex;
+  align-items: center;
+  width: max-content;
+}
+
+.grades {
+  color: #f3495c;
+  font-weight: 500;
+}
+
+.searchIcon {
+  position: relative;
+  left: 40px;
+  color: #606770;
+}
+
+#navbar__first-searchbar {
+  background-color: #f2f2f2;
+  padding: 15px 54px;
+}
+.tag {
+  width: 15px;
+  height: 15px;
+}
+
+#classroom {
+  display: block;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+/****** classroom blocks*/
+
+#classSection {
+  background: white;
+  border-radius: 20px;
+  padding: 0;
+  margin: 15px;
+}
+
+#classSection:hover {
+  border: 4px solid #f7d31d;
+  background: #f7d31d;
+}
+#classSection:hover img,
+#classSection:hover .textBlock {
+  display: none;
+}
+
+#classSection:hover h3 {
+  font-size: 25px;
+  margin-top: 15px;
+  font-weight: 700;
+}
+
+.subjectName {
+  background-color: #f7d31d;
+  color: white;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 15px;
+
+  font-weight: 600;
+}
+
+.teacher-img {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #f7d31d;
+  margin: 15px;
+}
+
+#classSection span {
+  color: #989696;
+  font-size: 14px;
+}
+
+#classSection h4 {
+  color: #f7d31d;
+  font-size: 14px;
+  font-weight: 500;
+}
+.teacher-block {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.listTitle {
+  font-weight: 700;
+  color: #1f2027;
+  padding-top: 30px;
+  padding-left: 15px;
+  font-size: 18px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 672px) {
+  .navBar {
+    margin-top: 60px;
+  }
+  #classSection {
+    width: -webkit-fill-available;
+  }
+}
+
+.row {
+  margin-left: calc(1.5 * var(--bs-gutter-x));
+}
+
+/*** Single classroom  ****/
+.classBody {
+  background-color: #f2f2f2;
+}
+
+#SingleClass {
+  display: block;
+  height: 100vh;
+  overflow-y: scroll;
+}
+.classBody h3 {
+  font-weight: 700;
+  color: #1f2027;
+  padding: 15px 15px;
+  font-size: 18px;
+}
+.classBody h3 {
+  font-weight: 400;
+  color: #c4c4c4;
+  padding: 15px 0;
+  font-size: 18px;
+}
+
+.classBody h3 span {
+  font-weight: 700;
+  color: #1f2027;
+}
+
+.classBody {
+  padding: 15px 15px;
+}
+
+.accordion-body {
+  padding: 0 1.25rem;
+}
+
+.blueLine {
+  background-color: #0894f6;
+  width: 20px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  z-index: 1000;
+  height: -webkit-fill-available;
+  position: absolute;
+}
+
+.theme,
+.accordion-item {
+  position: relative;
+  margin-top: 15px;
+  border-radius: 8px;
+}
+#accordion-header {
+  margin-left: 15px;
+}
+
+.accordion-item .accordion-button {
+  font-weight: 500;
+  font-size: 16px;
+  color: #1f2027;
+}
+#accordion-header .accordion-button:not(.collapsed),
+#accordion-header .accordion-button .collapsed {
+  background-color: transparent;
+}
+
+#AccordionBody .show {
+  box-shadow: none;
+  background: transparent;
+  width: 100%;
+}
+
+#AccordionBodyDone #AccordionBody {
+  background: #0894f6;
+}
+
+#accordion-header button:focus:not(:focus-visible) {
+  color: #1f2027;
+}
+
+#AccordionBodyDone #accordion-header button:focus:not(:focus-visible) {
+  color: white;
+}
+#accordion-header .accordion-button::after {
+  background-image: url(/public/assets/img/circle-check-regular.svg);
+  color: #0894f6;
+}
+#accordion-header .accordion-button:not(.collapsed)::after {
+  transform: rotate(-360deg);
+}
+
+#accordion-header .accordion-button {
+  background: transparent;
+}
+
+#AccordionBody .theme .Done .accordion-item {
+  background: #0894f6;
+}
+
+#AccordionBodyDone,
+#AccordionBodyDone #accordion-header {
+  background: #0894f6;
+  color: white;
+}
+
+#AccordionBodyDone .show {
+  background: transparent;
+  box-shadow: none;
+}
+
+#AccordionBodyDone #accordion-header .accordion-button {
+  color: white;
+  border-color: white;
+}
+
+#AccordionBodyDone #accordion-header .accordion-button::after {
+  background-image: url(/public/assets/img/circle-check-solid.svg);
+  color: white;
+}
+
+.chapter,
+.assignement {
+  display: flex;
+  margin: 30px 0;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.chapter {
+  color: #0894f6;
+}
+.assignement,
+.assignement h4 p {
+  color: #f3495c;
+}
+.chapter h4,
+.assignement h4 {
+  margin-left: 15px;
+  color: #606770;
+}
+
+.assignement h4 p {
+  margin-left: 30px;
+  font-weight: 600;
+}
+
+#AccordionBodyDone .chapter,
+#AccordionBodyDone .chapter h4 {
+  color: white;
+}
+
+.chapter:hover,
+.assignement:hover {
+  background: #b9d5f0;
+}
+
+#AccordionBodyDone .assignement {
+  background: white;
+  width: fit-content;
+  border-radius: 8px;
+}
+
+.assignement h4 {
+  display: flex;
+}
+
+.DownloadIcon {
+  display: none;
+  right: 35px;
+  position: absolute;
+}
+
+.chapter :hover + .DownloadIcon {
+  display: block;
+}
+
+#AccordionBodyDone .assignement {
+  cursor: default;
+}
+
+#SingleClass .modal-backdrop {
+  margin: 0;
+  border-radius: 0;
+}
+#SingleClass .modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  margin: 0;
+  border-radius: 0;
+}
+
+#SingleClass #modal .modal .show {
+  width: -webkit-fill-available;
+  margin: 0;
+  background-color: #000;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+#SingleClass .form {
+  margin: 0;
+}

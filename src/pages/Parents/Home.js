@@ -16,7 +16,7 @@ function Home() {
   };
   return (
     <div className="s-layout__content " id="feed">
-      <Posts showStore="block" />
+      <Posts display="none" />
       <ChatBar />
     </div>
   );

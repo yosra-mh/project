@@ -60,3 +60,30 @@ export const studentLinks = [
     link: "mySchedule",
   },
 ];
+
+export const parentsLinks = [
+  {
+    id: 1,
+    icon: <FontAwesomeIcon icon={faHouse} />,
+    name: "Home",
+    link: "home",
+  },
+  {
+    id: 2,
+    icon: <FontAwesomeIcon icon={faCommentDots} />,
+    name: "Discussions",
+    link: "discussions",
+  },
+  {
+    id: 3,
+    icon: <FontAwesomeIcon icon={faChildren} />,
+    name: "Classroom",
+    link: "classroom",
+  },
+  {
+    id: 4,
+    icon: <FontAwesomeIcon icon={faCalendarDay} />,
+    name: "Schedule",
+    link: "sonSchedule",
+  },
+];
